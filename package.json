@@ -6,6 +6,7 @@
   "scripts": {
     "build": "NODE_ENV=production webpack --config config/webpack.config.js",
     "start-electron": "yarn electron electron.js",
+    "start-electron-dev": "yarn electron electron.js dev",
     "start": "NODE_ENV=development webpack-dev-server --mode development --hot --progress --color --port 9000 --config config/webpack.dev.config.js"
   },
   "author": "Philipp Weitz",

@@ -3,8 +3,13 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 class StartElectronPlugin {
   apply(compiler) {
+    let didStart = false;
+
     compiler.hooks.done.tap('Start Electron Plugin', () => {
-      exec('yarn start-electron')
+      if (!didStart) {
+        exec('yarn start-electron-dev');
+        didStart = true;
+      }
     });
   }
 }
