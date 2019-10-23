@@ -1,0 +1,32 @@
+{
+  "name": "electron-webpack-ts",
+  "version": "0.0.1",
+  "description": "Electron example using webpack and typescript",
+  "main": "src/react.tsx",
+  "scripts": {
+    "build": "NODE_ENV=production webpack --config config/webpack.config.js",
+    "start-electron": "yarn electron electron.js",
+    "start": "NODE_ENV=development webpack-dev-server --mode development --hot --progress --color --port 9000 --config config/webpack.dev.config.js"
+  },
+  "author": "Philipp Weitz",
+  "license": "ISC",
+  "dependencies": {
+    "@babel/core": "7.6.4",
+    "@types/react": "16.9.9",
+    "@types/react-dom": "16.9.2",
+    "babel-loader": "^8.0.6",
+    "babel-preset-react-app": "9.0.2",
+    "electron": "7.0.0",
+    "html-webpack-plugin": "3.2.0",
+    "prettier": "1.16.4",
+    "react": "16.8.6",
+    "react-dom": "16.8.6",
+    "react-router-dom": "5.1.2",
+    "tslint-config-prettier": "1.18.0",
+    "tslint-plugin-prettier": "1.3.0",
+    "typescript": "3.6.4",
+    "webpack": "4.41.2",
+    "webpack-cli": "3.3.9",
+    "webpack-dev-server": "3.9.0"
+  }
+}
