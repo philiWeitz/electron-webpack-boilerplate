@@ -2,7 +2,7 @@ const { app, BrowserWindow } = require('electron');
 const isDevEnvironment = process.argv[2] === 'dev';
 
 function loadDev(win) {
-    console.log("Servicing from dev server port 9000");
+    console.log("Serving from dev server port 9000");
 
     // for webpack dev server
     win.loadURL('http://localhost:9000').catch(() => {

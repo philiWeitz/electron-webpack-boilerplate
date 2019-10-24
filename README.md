@@ -5,5 +5,6 @@
 - yarn start
 
 ## Build bundle
+- yarn install
 - yarn build
 - yarn start-electron

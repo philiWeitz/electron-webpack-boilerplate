@@ -1,45 +1,20 @@
-const HtmlWebpackPlugin = require('html-webpack-plugin');
+const merge = require('webpack-merge');
+const baseConfig = require('./webpack.config');
 
-module.exports = [
+module.exports = merge(baseConfig,
   {
     mode: 'development',
-    entry: './src/react.tsx',
-    target: 'electron-renderer',
     devtool: 'inline-source-map',
+
+    stats: {
+      colors: true
+    },
 
     devServer: {
       historyApiFallback: true,
       contentBase: '/',
+      progress: true,
       hot: true,
     },
-
-    resolve: {
-      extensions: ['.ts', '.tsx', '.js'],
-    },
-
-    module: {
-      rules: [
-        {
-          test: /\.(ts|tsx)$/,
-          loader: require.resolve('babel-loader'),
-          options: {
-            presets: [
-              ['react-app', { flow: false, typescript: true }],
-            ],
-          },
-        },
-      ],
-    },
-
-    output: {
-      path: __dirname + '/../dist',
-      filename: 'bundle.js',
-    },
-
-    plugins: [
-      new HtmlWebpackPlugin({
-        template: './src/index.html',
-      }),
-    ],
-  },
-];
+  }
+);
