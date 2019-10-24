@@ -5,7 +5,9 @@ function loadDev(win) {
     console.log("Servicing from dev server port 9000");
 
     // for webpack dev server
-    win.loadURL('http://localhost:9000');
+    win.loadURL('http://localhost:9000').catch(() => {
+        setTimeout(() => loadDev(win), 1000);
+    });
 }
 
 function loadBuild(win, isNextRefreshReload) {

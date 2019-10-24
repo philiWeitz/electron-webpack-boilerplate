@@ -1,18 +1,4 @@
-const exec = require('child_process').exec;
 const HtmlWebpackPlugin = require('html-webpack-plugin');
-
-class StartElectronPlugin {
-  apply(compiler) {
-    let didStart = false;
-
-    compiler.hooks.done.tap('Start Electron Plugin', () => {
-      if (!didStart) {
-        exec('yarn start-electron-dev');
-        didStart = true;
-      }
-    });
-  }
-}
 
 module.exports = [
   {
@@ -54,7 +40,6 @@ module.exports = [
       new HtmlWebpackPlugin({
         template: './src/index.html',
       }),
-      new StartElectronPlugin(),
     ],
   },
 ];
